@@ -6,7 +6,6 @@ Presentations and labs for Synapse Analytics custom two-day training.
   - [Day 1](#day-1)
     - [Day 1 agenda](#day-1-agenda)
   - [Day 2](#day-2)
-    - [Day 2 agenda](#day-2-agenda)
 
 ## Day 1
 
@@ -28,7 +27,7 @@ Building a modern data warehouse with **Azure Synapse Analytics**. We introduce 
   - Import sales data with PolyBase and COPY using T-SQL
 - Extended break (lunch) (30 minutes)
 - Presentation: Data transformation with Synapse Pipelines, SQL, and Spark (30 minutes)
-- [**Lab2: Build automated data integration pipelines with Azure Synapse Pipelines**](labs/day2/lab2/README.md) (60 minutes)
+- [**Lab2: Build automated data integration pipelines with Azure Synapse Pipelines**](labs/day1/lab2/README.md) (60 minutes)
   - Petabyte-scale ingestion with Azure Synapse Pipelines
   - Code-free transformation at scale with Azure Synapse Pipelines
     - Create data pipeline to import poorly formatted CSV
@@ -48,9 +47,9 @@ Building a modern data warehouse with **Azure Synapse Analytics**. We introduce 
 
 ## Day 2
 
-Finally, we create Power BI reports within Synapse Analytics against files stored in the data lake.
+Building on the foundations covered in Day 1, we continue with performance and monitoring. Next, we cover data science in Synapse Analytics, using Azure Machine Learning and Spark pools. Then, we move on to security within the Synapse Workspace and its related components. Finally, we create Power BI reports within Synapse Analytics against files stored in the data lake.
 
-### Day 2 agenda
+<!-- ### Day 2 agenda
 
 - Presentation: Reporting with Power BI
 - [**Lab 4: Build reports using Power BI**](labs/day2/lab4/README.md) (30 minutes)
@@ -61,4 +60,4 @@ Finally, we create Power BI reports within Synapse Analytics against files store
   - Configuring Azure Synapse Link with Cosmos DB
   - Querying Cosmos DB with Apache Spark for Synapse Analytics
   - Querying Cosmos DB with SQL Serverless for Synapse Analytics
-- Questions & closing (10 minutes)
+- Questions & closing (10 minutes) -->

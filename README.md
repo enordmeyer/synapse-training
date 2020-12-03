@@ -10,6 +10,7 @@ Presentations and labs for Synapse Analytics custom two-day training.
 ## Day 1
 
 Building a modern data warehouse with **Azure Synapse Analytics**. We introduce Synapse Analytics and its components and features. Then we focus on data engineering tasks, working with files of different types stored in the data lake. The tasks include data ingestion, exploration, transformation, and loading, using a mix of serverless Spark pools and serverless SQL pools. Next, we explore ways to load data into dedicated SQL pools and how to build data pipelines to load and transform data in an automated and repeatable way.
+
 ### Day 1 agenda
 
 - Presentation: Introduction to Azure Synapse Analytics (15 minutes)

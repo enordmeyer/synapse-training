@@ -568,9 +568,9 @@ First, let's prepare the Power BI report query by exploring the data source we'l
 
 ### Task 2: Visualize data with SQL serverless and create a Power BI report
 
-1. In the [Azure Portal](https://portal.azure.com), navigate to your Synapse Workspace. In the **Overview** tab, **copy** the **SQL on-demand endpoint**:
+1. In the [Azure Portal](https://portal.azure.com), navigate to your Synapse Workspace. In the **Overview** tab, **copy** the **Serverless SQL endpoint**:
 
-    ![Identify endpoint for SQL on-demand.](media/sql-od-endpoint.png "SQL on-demand endpoint")
+    ![Identify endpoint for Serverless SQL endpoint.](media/serverless-sql-endpoint.png "Serverless SQL endpoint")
 
 2. Switch back to Power BI Desktop. Create a new report, then click **Get data**.
 
@@ -580,7 +580,7 @@ First, let's prepare the Power BI report query by exploring the data source we'l
 
     ![Identify endpoint for SQL on-demand.](media/pbi-get-data-synapse.png "Get Data")
 
-4. Paste the endpoint to SQL on-demand identified on the first step into the **Server** field **(1)**, enter **`demo`** for the **Database (2)**, select **DirectQuery (3)**, then **paste the query below (4)** into the expanded **Advanced options** section of the SQL Server database dialog. Finally, click **OK (5)**.
+4. Paste the endpoint to the Serverless SQL endpoint identified on the first step into the **Server** field **(1)**, enter **`demo`** for the **Database (2)**, select **DirectQuery (3)**, then **paste the query below (4)** into the expanded **Advanced options** section of the SQL Server database dialog. Finally, click **OK (5)**.
 
     ```sql
     SELECT TOP (100) [Year]

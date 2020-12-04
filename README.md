@@ -47,7 +47,7 @@ Building on the foundations covered in Day 1, we continue with performance and m
   - Study the impact of wrong choices for column data types
   - Study the impact of materialized views
   - Avoid extensive logging
-- [**Lab2: End-to-end security with Azure Synapse Analytics**](labs/day2/lab2/README.md) (60 minutes)
+- [**Lab2: End-to-end security with Azure Synapse Analytics**](labs/day2/lab2/README.md) (30 minutes)
   - Securing Azure Synapse Analytics supporting infrastructure
   - Securing the Azure Synapse Analytics workspace and managed services
   - Securing Azure Synapse Analytics workspace data

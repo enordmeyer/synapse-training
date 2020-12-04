@@ -30,7 +30,7 @@ The engineers at Tailspin Traders have run into issues ingesting some of their s
 
 Azure Synapse Studio provides numerous ways to explore data, from a simple preview interface to more complicated programmatic options using Synapse Spark notebooks. In this exercise, you will learn how to use these features to explore, identify, and fix problematic files. You will be exploring CSV files stored in the `wwi-02/sale-poc` folder of the data lake and learning about how to identify and fix issues.
 
-1. Select the **Data** hub from the left-hand menu in Synapse Studio.
+1. Open Synapse Studio (<https://web.azuresynapse.net/>), and then navigate to the **Data** hub.
 
     ![The data hub is highlighted.](media/data-hub.png "Data hub")
 

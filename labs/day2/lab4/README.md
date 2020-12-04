@@ -1,10 +1,10 @@
-# Lab 4: Power BI in Synapse Analytics
+# Lab 4: Build reports using Power BI
 
 In this lab, you learn how to integrate Power BI with your Synapse Analytics workspace.
 
 You begin by using exploring the provided Power BI linked service, creating a datasource, then creating a Power BI report in Synapse Studio. Next, you optimize performance by creating materialized views and using result-set caching. Finally, you create a Power BI report using serverless SQL pools. The following table of contents describes and links to the elements of the lab:
 
-- [Lab 4: Power BI in Synapse Analytics](#lab-4-power-bi-in-synapse-analytics)
+- [Lab 4: Build reports using Power BI](#lab-4-build-reports-using-power-bi)
   - [Resource naming throughout this lab](#resource-naming-throughout-this-lab)
   - [Exercise 1: Power BI and Synapse workspace integration](#exercise-1-power-bi-and-synapse-workspace-integration)
     - [Task 1: Login to Power BI](#task-1-login-to-power-bi)
@@ -64,7 +64,7 @@ For the remainder of this guide, the following terms will be used for various AS
 
 ### Task 3: Connect to Power BI from Synapse
 
-1. Switch back to Synapse Studio, then navigate to the **Manage hub**.
+1. Open Synapse Studio (<https://web.azuresynapse.net/>), and then navigate to the **Manage hub**.
 
     ![Manage hub.](media/manage-hub.png "Manage hub")
 
@@ -337,34 +337,39 @@ Let's recall the performance optimization options we have when integrating Power
 5. Replace the query with the following to create a materialized view that can support the above query:
 
     ```sql
+    IF EXISTS(select * FROM sys.views where name = 'mvCustomerSales')
+        DROP VIEW wwi_perf.mvCustomerSales
+        GO
+
     CREATE MATERIALIZED VIEW
-    wwi.mvCustomerSales
+        wwi_perf.mvCustomerSales
     WITH
     (
         DISTRIBUTION = HASH( CustomerId )
     )
     AS
     SELECT
-        FS.CustomerID
-        ,P.Seasonality
+        S.CustomerId
         ,D.Year
         ,D.Quarter
         ,D.Month
-        ,sum(FS.TotalAmount) as TotalAmount
-        ,sum(FS.ProfitAmount) as ProfitAmount
+        ,SUM(S.TotalAmount) as TotalAmount
+        ,SUM(S.ProfitAmount) as TotalProfit
     FROM
-        wwi.SaleSmall FS
-        JOIN wwi.Product P ON P.ProductId = FS.ProductId
-        JOIN wwi.Date D ON FS.TransactionDateId = D.DateId
+        [wwi_perf].[Sale_Partition02] S
+        join [wwi].[Date] D on
+            S.TransactionDateId = D.DateId
     GROUP BY
-        FS.CustomerID
-        ,P.Seasonality
+        S.CustomerId
         ,D.Year
         ,D.Quarter
         ,D.Month
+    GO
     ```
 
-    > This query will take between 90 and 120 seconds to complete.
+    > This query will take between 30 and 120 seconds to complete.
+    >
+    > We first drop the view if it exists, since we create it in an earlier lab.
 
 6. Run the following query to check that it actually hits the created materialized view.
 

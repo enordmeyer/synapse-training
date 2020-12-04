@@ -34,7 +34,7 @@ In this exercise, you will explore the data lake using both options.
 
 When you query Parquet files using serverless SQL pools, you can explore the data with T-SQL syntax.
 
-1. In Synapse Studio, navigate to the **Data** hub.
+1. Open Synapse Studio (<https://web.azuresynapse.net/>), and then navigate to the **Data** hub.
 
     ![The Data menu item is highlighted.](media/data-hub.png "Data hub")
 

@@ -1,4 +1,4 @@
-# Optimize a Data Warehouse with dedicated SQL Pools in Azure Synapse 
+# Optimize a Data Warehouse with dedicated SQL Pools in Azure Synapse
 
 In this lab, we show ways you can optimize data warehouse workloads that use the dedicated SQL pools. We cover useful developer features, how to define and use workload management and classification to control data loading, and methods to optimize query performance. The following table of contents describes and links to the elements of the lab:
 
@@ -847,7 +847,7 @@ Let's start by experimenting with different parameters.
 
 12. Besides the `EXPLAIN` statement, you can also understand the plan details using the `sys.dm_pdw_request_steps` DMV.
 
-    Query the `sys.dm_pdw_exec_requests` DMW to find your query id (this is for the query you executed previously at step 2):
+    Query the `sys.dm_pdw_exec_requests` DMW to find your query id (this is for the query you executed previously at step 6):
 
     ```sql
     SELECT  
@@ -947,7 +947,7 @@ Let's start by experimenting with different parameters.
 
     ![The run button is highlighted in the query toolbar.](media/synapse-studio-query-toolbar-run.png "Run")
 
-    The query will take up to **4.5 minutes** to complete.
+    The query will take around **3.5 minutes** to complete.
 
     > **NOTE**
     >
